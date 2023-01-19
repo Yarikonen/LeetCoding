@@ -1,6 +1,19 @@
 package taskss;
 
-public class T206 extends AbstractTask{
+
+public class T206 extends AbstractTask{ //TODO MAKE RECURSIVE
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {}
+        TreeNode(int val) { this.val = val; }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
     public class ListNode {
         int val;
         ListNode next;
@@ -21,17 +34,8 @@ public class T206 extends AbstractTask{
 
     }
     public ListNode reverseList(ListNode head) {
-        ListNode prev = null;
-        ListNode current = head;
-
-
-        while(current != null) {
-            ListNode next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
-        }
-        return prev;
+        reverseList(head.next).next=head;
+        return head;
 
 
     }

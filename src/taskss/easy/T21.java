@@ -3,7 +3,7 @@ package taskss.easy;
 import utils.ListNode;
 
 public class T21 {
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) { //TODO DO IT
         ListNode begining = list2;
         while(list2!=null){
             while(list1.next!=null||list1.val<=list2.val){
